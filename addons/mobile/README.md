@@ -35,6 +35,11 @@ If you intend to use a node inheriting from BaseButton in order to display a too
 
 ## Additional notes
 
-You can use predifined animations when help bar or tooltip appears or disappears. You can also use custom animations. Custom animations are user-coded animations and must be written according the [Custom Animations Guideline](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md).
+You can use predifined animations when help bar or tooltip appears or disappears. You can also use custom animations. Custom animations are user-coded animations and must be written according the [Custom Animations Guideline](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md).
 You can use `.gd` or `.txt` files to write your code.
 
+## Documentation
+
+- [Help Bar](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/HELP%20BAR%20SETTINGS.md)
+- [Tooltip](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/TOOLTIP%20SETTINGS.md)
+- [Custom Animation Guidelines](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md)
