@@ -22,7 +22,7 @@ a tip to guide the user.
 Compatibles nodes are [LineEdit](https://docs.godotengine.org/fr/4.x/classes/class_lineedit.html) nodes and [SpinBox](https://docs.godotengine.org/fr/4.x/classes/class_spinbox.html) nodes
 
 
-![Help bar screenshot](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/screenshots/help-bar_and_keyboard.png)
+![Help bar screenshot](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/screenshots/help_bar_and_keyboard.png)
  
 
 ## Tooltip
