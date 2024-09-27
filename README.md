@@ -40,6 +40,6 @@ You can use `.gd` or `.txt` files to write your code.
 
 ## Documentation
 
-- [Help Bar](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/doc/HELP%20BAR%20SETTINGS.md)
-- [Tooltip](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/doc/TOOLTIP%20SETTINGS.md)
-- [Custom Animation Guidelines](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md)
+- [Help Bar](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/HELP%20BAR%20SETTINGS.md)
+- [Tooltip](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/TOOLTIP%20SETTINGS.md)
+- [Custom Animation Guidelines](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md)
