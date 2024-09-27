@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://0expfngqcr82"]
+
+[ext_resource type="Script" path="res://addons/mobile/tooltip/tooltip_settings.gd" id="1_kmi4l"]
+[ext_resource type="PackedScene" uid="uid://f4tiqnp8tflm" path="res://addons/mobile/signals_manager/signals_manager.tscn" id="2_8cmsk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfw7m"]
+bg_color = Color(0.27451, 0.439216, 0.580392, 0.392157)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="tooltip_settings" type="VBoxContainer"]
+offset_right = 300.0
+offset_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_kmi4l")
+metadata/tooltip_on_mobile = false
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+tooltip_text = "Toggle tooltip display on Android and iOS."
+
+[node name="title" type="Label" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Display on Mobile"
+vertical_alignment = 1
+clip_text = true
+
+[node name="enable" type="CheckBox" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "On"
+
+[node name="VBox" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+metadata/tooltip_on_mobile = false
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+metadata/tooltip_on_mobile = false
+
+[node name="custom_settings_editor_enabler" type="CheckBox" parent="VBox/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mfw7m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mfw7m")
+disabled = true
+action_mode = 0
+text = "Overrides"
+metadata/tooltip_on_mobile = false
+
+[node name="mobile_plugin_signals_manager" parent="." instance=ExtResource("2_8cmsk")]
+
+[connection signal="toggled" from="HBox/enable" to="." method="_on_enable_toggled"]
+[connection signal="pressed" from="VBox/HBox/custom_settings_editor_enabler" to="." method="_on_custom_settings_editor_enabler_pressed"]

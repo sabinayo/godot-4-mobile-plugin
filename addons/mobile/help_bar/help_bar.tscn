@@ -1,0 +1,247 @@
+[gd_scene load_steps=15 format=3 uid="uid://hrg2br4xttnv"]
+
+[ext_resource type="Script" path="res://addons/mobile/help_bar/help_bar.gd" id="1_n7hfv"]
+[ext_resource type="StyleBox" path="res://addons/mobile/themes/help_bar_background.tres" id="1_ttje2"]
+[ext_resource type="StyleBox" uid="uid://bf333c00548vq" path="res://addons/mobile/themes/help_bar_tip_background.tres" id="3_kt301"]
+[ext_resource type="LabelSettings" path="res://addons/mobile/themes/help_bar_font.tres" id="4_sjydv"]
+[ext_resource type="StyleBox" uid="uid://b5ar0ykwkm3wg" path="res://addons/mobile/themes/help_bar_line_edit_normal_bg.tres" id="5_s71jj"]
+[ext_resource type="StyleBox" uid="uid://cg4ycn4477hm0" path="res://addons/mobile/themes/help_bar_line_edit_focus_bg.tres" id="6_x5w74"]
+[ext_resource type="PackedScene" uid="uid://f4tiqnp8tflm" path="res://addons/mobile/signals_manager/signals_manager.tscn" id="7_j4blj"]
+
+[sub_resource type="Animation" id="Animation_c86o7"]
+resource_name = "BOUNCE"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(0.95, 0.95), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c5tyj"]
+resource_name = "POP"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.794, 0.778), Vector2(0.937, 1.142), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0907571, 0.0261799, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g0j5o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oy5gm"]
+resource_name = "SCALE"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_53nux"]
+resource_name = "SCALE_X"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_clmcb"]
+resource_name = "SCALE_Y"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6gvo"]
+_data = {
+"BOUNCE": SubResource("Animation_c86o7"),
+"POP": SubResource("Animation_c5tyj"),
+"RESET": SubResource("Animation_g0j5o"),
+"SCALE": SubResource("Animation_oy5gm"),
+"SCALE_X": SubResource("Animation_53nux"),
+"SCALE_Y": SubResource("Animation_clmcb")
+}
+
+[node name="help_bar" type="PanelContainer"]
+top_level = true
+z_as_relative = false
+offset_right = 337.0
+offset_bottom = 81.0
+theme_override_styles/panel = ExtResource("1_ttje2")
+script = ExtResource("1_n7hfv")
+metadata/tooltip_on_mobile = false
+metadata/signals_manager_path = "mobile_plugin_signals_manager"
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/tooltip_on_mobile = false
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+
+[node name="tip" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("3_kt301")
+text = "Topic:"
+label_settings = ExtResource("4_sjydv")
+vertical_alignment = 1
+metadata/tooltip_on_mobile = false
+metadata/signals_manager_path = "../../mobile_plugin_signals_manager"
+
+[node name="edition" type="LineEdit" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_s71jj")
+theme_override_styles/focus = ExtResource("6_x5w74")
+alignment = 1
+context_menu_enabled = false
+clear_button_enabled = true
+middle_mouse_paste_enabled = false
+caret_blink = true
+metadata/mobile_help_bar_tip = ""
+metadata/mobile_help_bar_anchor = 0
+metadata/mobile_help_bar_keyboard = 0
+metadata/mobile_help_bar_enabled = false
+metadata/tooltip_on_mobile = false
+metadata/signals_manager_path = "../../mobile_plugin_signals_manager"
+
+[node name="anim" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_j6gvo")
+}
+
+[node name="mobile_plugin_signals_manager" parent="." instance=ExtResource("7_j4blj")]
+
+[connection signal="text_changed" from="VBox/edition" to="." method="_on_edition_text_changed"]
+[connection signal="text_submitted" from="VBox/edition" to="." method="_on_edition_text_submitted"]

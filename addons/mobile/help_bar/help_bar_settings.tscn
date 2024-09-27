@@ -1,0 +1,181 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxuua7lg2b6gq"]
+
+[ext_resource type="Script" path="res://addons/mobile/help_bar/help_bar_settings.gd" id="1_eujja"]
+[ext_resource type="Texture2D" uid="uid://c7d17gqxkeg2j" path="res://addons/mobile/icons/help_bar_full_rect.svg" id="2_82jyy"]
+[ext_resource type="Texture2D" uid="uid://cwayjup5ph6he" path="res://addons/mobile/icons/help_bar_center_wide.svg" id="3_cm0vq"]
+[ext_resource type="Texture2D" uid="uid://dch1d2oihncqi" path="res://addons/mobile/icons/help_bar_bottom_wide.svg" id="4_7deiu"]
+[ext_resource type="Texture2D" uid="uid://c53ric25623iu" path="res://addons/mobile/icons/help_bar_top_wide.svg" id="5_ej7xq"]
+[ext_resource type="PackedScene" uid="uid://f4tiqnp8tflm" path="res://addons/mobile/signals_manager/signals_manager.tscn" id="6_cusqd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rk4ae"]
+bg_color = Color(0.27451, 0.439216, 0.580392, 0.392157)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="help_bar_settings" type="VBoxContainer"]
+offset_right = 277.0
+offset_bottom = 187.0
+script = ExtResource("1_eujja")
+metadata/tooltip_on_mobile = false
+metadata/signals_manager_path = "mobile_plugin_signals_manager"
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+tooltip_text = "Enable/Disable help bar display."
+
+[node name="title" type="Label" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Enable"
+vertical_alignment = 1
+clip_text = true
+
+[node name="enable" type="CheckBox" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "On"
+
+[node name="VBox" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+metadata/tooltip_on_mobile = false
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+tooltip_text = "Property: tip
+
+A text to provide information about what the user should write."
+metadata/tooltip_on_mobile = false
+
+[node name="title" type="Label" parent="VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Tip"
+vertical_alignment = 1
+clip_text = true
+metadata/tooltip_on_mobile = false
+
+[node name="tip" type="LineEdit" parent="VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/text_ease_label = ""
+metadata/text_ease_topic = "ff"
+metadata/text_ease_size = 0
+metadata/text_ease_keyboard = 0
+metadata/text_ease_enabled = false
+metadata/tooltip_on_mobile = false
+metadata/mobile_help_bar_anchor = 0
+metadata/mobile_help_bar_keyboard = 0
+metadata/mobile_help_bar_enabled = false
+metadata/mobile_help_bar_tip = ""
+
+[node name="HBox2" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+tooltip_text = "Property: keyboard_type
+
+● KEYBOARD_TYPE_DEFAULT: Default text virtual keyboard.
+● KEYBOARD_TYPE_MULTILINE: Multiline virtual keyboard.
+● KEYBOARD_TYPE_NUMBER: Virtual number keypad, useful for PIN entry.
+● KEYBOARD_TYPE_NUMBER_DECIMAL: Virtual number keypad, useful for entering fractional numbers.
+● KEYBOARD_TYPE_PHONE: Virtual phone number keypad.
+● KEYBOARD_TYPE_EMAIL_ADDRESS: Virtual keyboard with additional keys to assist with typing email addresses.
+● KEYBOARD_TYPE_PASSWORD: Virtual keyboard for entering a password. On most platforms, this should disable autocomplete and autocapitalization.
+● KEYBOARD_TYPE_URL: Virtual keyboard with additional keys to assist with typing URLs."
+metadata/tooltip_on_mobile = false
+
+[node name="title" type="Label" parent="VBox/HBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Keyboard type"
+vertical_alignment = 1
+clip_text = true
+
+[node name="keyboard" type="OptionButton" parent="VBox/HBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+item_count = 8
+selected = 0
+popup/item_0/text = "Default"
+popup/item_0/id = 0
+popup/item_1/text = "Multiline"
+popup/item_1/id = 1
+popup/item_2/text = "Number"
+popup/item_2/id = 2
+popup/item_3/text = "Decimal"
+popup/item_3/id = 3
+popup/item_4/text = "Phone"
+popup/item_4/id = 4
+popup/item_5/text = "Email"
+popup/item_5/id = 5
+popup/item_6/text = "Password"
+popup/item_6/id = 6
+popup/item_7/text = "URL"
+popup/item_7/id = 7
+
+[node name="HBox3" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+tooltip_text = "property: anchor
+
+Position of the help bar based on the space left after the virtual keyboard is visible."
+metadata/tooltip_on_mobile = false
+
+[node name="title" type="Label" parent="VBox/HBox3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "anchor"
+vertical_alignment = 1
+clip_text = true
+
+[node name="anchor" type="OptionButton" parent="VBox/HBox3"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+item_count = 4
+selected = 0
+popup/item_0/text = "Full rect"
+popup/item_0/icon = ExtResource("2_82jyy")
+popup/item_0/id = 0
+popup/item_1/text = "Center wide"
+popup/item_1/icon = ExtResource("3_cm0vq")
+popup/item_1/id = 1
+popup/item_2/text = "Bottom wide"
+popup/item_2/icon = ExtResource("4_7deiu")
+popup/item_2/id = 2
+popup/item_3/text = "Top Wide"
+popup/item_3/icon = ExtResource("5_ej7xq")
+popup/item_3/id = 3
+metadata/signals_manager_path = "../../../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = false
+
+[node name="HBox5" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+metadata/tooltip_on_mobile = false
+
+[node name="custom_settings_editor_enabler" type="CheckBox" parent="VBox/HBox5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rk4ae")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rk4ae")
+disabled = true
+action_mode = 0
+text = "Overrides"
+metadata/tooltip_on_mobile = false
+metadata/signals_manager_path = "../../../mobile_plugin_signals_manager"
+
+[node name="mobile_plugin_signals_manager" parent="." instance=ExtResource("6_cusqd")]
+
+[connection signal="toggled" from="HBox/enable" to="." method="_on_enable_toggled"]
+[connection signal="text_changed" from="VBox/HBox/tip" to="." method="_on_tip_text_changed"]
+[connection signal="item_selected" from="VBox/HBox2/keyboard" to="." method="_on_keyboard_type_selected"]
+[connection signal="item_selected" from="VBox/HBox3/anchor" to="." method="_on_size_selected"]
+[connection signal="pressed" from="VBox/HBox5/custom_settings_editor_enabler" to="." method="_on_custom_settings_editor_enabler_pressed"]

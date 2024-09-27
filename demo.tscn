@@ -1,0 +1,186 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhuj1eadqs1vb"]
+
+[ext_resource type="PackedScene" uid="uid://f4tiqnp8tflm" path="res://addons/mobile/signals_manager/signals_manager.tscn" id="1_7oxqa"]
+
+[node name="demo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/signals_manager_path = "mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 446.0
+offset_right = 764.0
+offset_bottom = 528.0
+tooltip_text = "A tooltip with custom animation."
+text = "CLICK ME"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 446.0
+offset_right = 589.0
+offset_bottom = 528.0
+tooltip_text = "Thanks for your submission !"
+text = "Submit"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 446.0
+offset_right = 938.0
+offset_bottom = 528.0
+tooltip_text = "Thanks for your submission !"
+text = "Submit"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_top = 631.0
+offset_right = 138.0
+offset_bottom = 713.0
+tooltip_text = "Thanks for your submission !"
+text = "Submit"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+offset_right = 138.0
+offset_bottom = 82.0
+tooltip_text = "Thanks for your submission !"
+text = "Submit"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="Button7" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1128.0
+offset_right = 1266.0
+offset_bottom = 82.0
+tooltip_text = "Thanks for your submission !"
+text = "Submit"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="Button8" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 631.0
+offset_right = 1183.0
+offset_bottom = 713.0
+tooltip_text = "Thanks for your submission !"
+text = "Submit"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="Button9" type="Button" parent="."]
+layout_mode = 0
+offset_top = 330.0
+offset_right = 138.0
+offset_bottom = 412.0
+tooltip_text = "Thanks for your submission !"
+text = "Submit"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 82.0
+offset_right = 823.0
+offset_bottom = 168.0
+placeholder_text = "Write a comment..."
+alignment = 1
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/mobile_help_bar_tip = "Write a comment"
+metadata/mobile_help_bar_anchor = 3
+metadata/mobile_help_bar_keyboard = 0
+metadata/mobile_help_bar_enabled = true
+metadata/tooltip_on_mobile = false
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 275.0
+offset_right = 765.0
+offset_bottom = 352.0
+alignment = 1
+prefix = "stars: "
+suffix = " / 5"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/mobile_help_bar_tip = "Rate the plugin:"
+metadata/mobile_help_bar_anchor = "Bottom wide"
+metadata/mobile_help_bar_keyboard = 5
+metadata/mobile_help_bar_enabled = true
+metadata/tooltip_on_mobile = false
+
+[node name="mobile_plugin_signals_manager" parent="." instance=ExtResource("1_7oxqa")]
+metadata/tooltip_overrides = {
+"../Button": {
+"mobile/tooltip/display/custom_enter_animation": "res://addons/mobile/custom_animation/fade_in_custom.gd",
+"mobile/tooltip/display/custom_exit_animation": "res://addons/mobile/custom_animation/fade_out_custom.gd"
+},
+"../Button5": {
+"mobile/tooltip/display/default_position": "Right"
+},
+"../Button8": {
+"mobile/tooltip/display/default_position": "Right",
+"mobile/tooltip/display/requester_indicator_animation": "None",
+"mobile/tooltip/display/text_horizontal_alignment": "Center",
+"mobile/tooltip/display/text_vertical_alignment": "Center"
+}
+}
+metadata/help_bar_overrides = {
+"../LineEdit": {}
+}
+
+[connection signal="gui_input" from="Button" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../Button"
+}]]
+[connection signal="gui_input" from="Button2" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../Button2"
+}]]
+[connection signal="gui_input" from="Button3" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../Button3"
+}]]
+[connection signal="gui_input" from="Button5" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../Button5"
+}]]
+[connection signal="gui_input" from="Button6" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../Button6"
+}]]
+[connection signal="gui_input" from="Button7" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../Button7"
+}]]
+[connection signal="gui_input" from="Button8" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../Button8"
+}]]
+[connection signal="gui_input" from="Button9" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../Button9"
+}]]
+[connection signal="gui_input" from="LineEdit" to="mobile_plugin_signals_manager" method="_on_help_bar_gui_input" binds= [{
+"mobile_help_bar_anchor": 3,
+"mobile_help_bar_enabled": true,
+"mobile_help_bar_keyboard": 0,
+"mobile_help_bar_tip": "Write a comment",
+"requester": "../LineEdit"
+}]]
+[connection signal="gui_input" from="SpinBox" to="mobile_plugin_signals_manager" method="_on_help_bar_gui_input" binds= [{
+"mobile_help_bar_anchor": 0,
+"mobile_help_bar_enabled": true,
+"mobile_help_bar_keyboard": 5,
+"mobile_help_bar_tip": "Rate the plugin:",
+"requester": "../SpinBox"
+}]]

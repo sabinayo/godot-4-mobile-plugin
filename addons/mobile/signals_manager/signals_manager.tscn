@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://f4tiqnp8tflm"]
+
+[ext_resource type="Script" path="res://addons/mobile/signals_manager/signals_manager.gd" id="1_2b4xg"]
+
+[node name="mobile_plugin_signals_manager" type="Node"]
+editor_description = "The mobile plugin uses this node to store node connections. It is an internal node. If you delete this node, it will be recreated, but any connections you made through the mobile plugin will be lost. The node must be a direct child of the scene root and have the same name as found in \"mobile.gd\".CONNECTOR"
+script = ExtResource("1_2b4xg")
+metadata/tooltip_overrides = {}
+metadata/help_bar_overrides = {}

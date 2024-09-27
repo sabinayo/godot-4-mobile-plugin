@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dwb741slqxxk6"]
+
+[ext_resource type="FontFile" uid="uid://dapj840is53fv" path="res://addons/mobile/fonts/OpenSans-SemiBold.ttf" id="1_duhqq"]
+
+[resource]
+font = ExtResource("1_duhqq")
+font_size = 30
