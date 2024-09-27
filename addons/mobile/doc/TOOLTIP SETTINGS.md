@@ -3,14 +3,14 @@
 # Tooltip settings
 > path: Project->Project Settings-> Mobile -> Tooltip
 
-![Tooltip settings screenshot](https://github.com/sabinayo/godot-4-mobile-plugin/blob/a235d7adc5809b740e3336a3c585e01f05634c2d/screenshots/tooltip-settings.png)
+![Tooltip settings screenshot](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/screenshots/tooltip-settings.png)
 
 ## Important
 
 Settings modified in [ProjectSettings](https://docs.godotengine.org/en/stable/classes/class_projectsettings.html) are applied in all instance of the default tooltip scene.
 You can also edit some of these settings for a single tooltip. To do so, create a new `MobileTooltipFastSettings` or load one. Settings modified inside a `MobileTooltipFastSettings` overrides those defined in [ProjectSettings](https://docs.godotengine.org/en/stable/classes/class_projectsettings.html).
 
-![MobileTooltipFastSettings creation and edition.](https://github.com/sabinayo/godot-4-mobile-plugin/blob/a235d7adc5809b740e3336a3c585e01f05634c2d/screenshots/create-and-edit-mtfs.gif)
+![MobileTooltipFastSettings creation and edition.](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/screenshots/create-and-edit-mtfs.gif)
 
 ## Configuration
 
@@ -135,7 +135,7 @@ Specify the sound played when the tooltip disappears.
 
 
 ### Audio Bus
->default: `Master`
+>default: `main`
 >
 >path: `mobile/tooltip/configuration/audio_bus`
 
@@ -229,7 +229,7 @@ The following animation are availables : `None, Bounce, Fade, Fade Down, Fade Le
 ### Custom Enter Animation
 >path: `mobile/tooltip/display/custom_enter_animation`
 
-Custom animation when the tooltip appears. If set, tooltip instance will use this animation regardless of the value of [Enter Animation](https://github.com/sabinayo/godot-4-mobile-plugin/blob/5b68dca382182a0c33937180fe32d368b43ccc0f/doc/TOOLTIP%20SETTINGS.md#enter-animation). See [README](https://github.com/sabinayo/godot-4-mobile-plugin/blob/388473c7f16c0910cccc9eed615d0dda51a6235f/README.md#additional-notes) and [CUSTOM ANIMATIONS GUIDELINE](https://github.com/sabinayo/godot-4-mobile-plugin/blob/388473c7f16c0910cccc9eed615d0dda51a6235f/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md) for more informations.
+Custom animation when the tooltip appears. If set, tooltip instance will use this animation regardless of the value of [Enter Animation](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/TOOLTIP%20SETTINGS.md#enter-animation). See [README](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/README.md#additional-notes) and [CUSTOM ANIMATIONS GUIDELINE](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md) for more informations.
 
 
 ### Exit Animation
@@ -245,5 +245,5 @@ The following animation are availables : `None, Bounce, Fade, Fade Down, Fade Le
 ### Custom Exit Animation
 >path: `mobile/tooltip/display/custom_exit_animation`
 
-Custom animation when the tooltip disappears. If set, tooltip instance will use this animation regardless of the value of [Exit Animation](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/TOOLTIP%20SETTINGS.md#exit-animation). See [README](https://github.com/sabinayo/godot-4-mobile-plugin/blob/388473c7f16c0910cccc9eed615d0dda51a6235f/README.md#additional-notes) and [CUSTOM ANIMATIONS GUIDELINE](https://github.com/sabinayo/godot-4-mobile-plugin/blob/388473c7f16c0910cccc9eed615d0dda51a6235f/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md) for more informations.
+Custom animation when the tooltip disappears. If set, tooltip instance will use this animation regardless of the value of [Exit Animation](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/TOOLTIP%20SETTINGS.md#exit-animation). See [README](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/README.md#additional-notes) and [CUSTOM ANIMATIONS GUIDELINE](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md) for more informations.
 
