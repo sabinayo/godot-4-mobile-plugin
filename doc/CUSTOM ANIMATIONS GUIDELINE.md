@@ -4,10 +4,10 @@
 A guide to writing custom animations for the help bar node or tooltip node.
 
 ## Notes
-- Animation code must be written in the [animate](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md#void-animateobj-control-virtual) function to work correctly.
+- Animation code must be written in the [animate](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md#void-animateobj-control-virtual) function to work correctly.
 
-- When using custom animation, you will need to play the sound (if any) manually in your code. To do this, simply call the [_play_sound()](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md#void-_play_soundsound_path-string-const) or [_play_sound_from_project_settings()](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md#methods) function.
-- All custom animations must emit the [animation_finished](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md#signals) signal once the animation has been completed. This ensures that the node to be animated is correctly deleted if the custom animation is used for the output animation.
+- When using custom animation, you will need to play the sound (if any) manually in your code. To do this, simply call the [_play_sound()](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md#void-_play_soundsound_path-string-const) or [_play_sound_from_project_settings()](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md#methods) function.
+- All custom animations must emit the [animation_finished](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md#signals) signal once the animation has been completed. This ensures that the node to be animated is correctly deleted if the custom animation is used for the output animation.
 
 Base implementation of custom animation:
 
