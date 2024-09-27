@@ -94,7 +94,7 @@ The following animation are availables : `None, Bounce, Fade, Fade Down, Fade Le
 ### Custom Enter Animation
 >path: `mobile/help_bar/display/custom_enter_animation`
 
-Custom animation when the help bar appears. If set, help bar instance will use this animation regardless of the value of [Enter Animation](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/HELP%20BAR%20SETTINGS.md#enter-animation). See [README](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/README.md#additional-notes) and [CUSTOM ANIMATIONS GUIDELINE](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md) for more informations.
+Custom animation when the help bar appears. If set, help bar instance will use this animation regardless of the value of [Enter Animation](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/HELP%20BAR%20SETTINGS.md#enter-animation). See [README](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/README.md#additional-notes) and [CUSTOM ANIMATIONS GUIDELINE](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md) for more informations.
 
 
 ### Exit Animation
@@ -110,8 +110,7 @@ The following animation are availables : `None, Bounce, Fade, Fade Down, Fade Le
 ### Custom Exit Animation
 >path: `mobile/help_bar/display/custom_exit_animation`
 
-Custom animation when the help bar disappears. If set, help bar instance will use this animation regardless of the value of [Exit Animation](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/HELP%20BAR%20SETTINGS.md#exit-animation). See [README](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/README.md#additional-notes) and [CUSTOM ANIMATIONS GUIDELINE](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md) for more informations.
-
+Custom animation when the help bar disappears. If set, help bar instance will use this animation regardless of the value of [Exit Animation](https://github.com/sabinayo/godot-4-mobile-plugin/blob/master/doc/HELP%20BAR%20SETTINGS.md#exit-animation). See [README](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/README.md#additional-notes) and [CUSTOM ANIMATIONS GUIDELINE](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md) for more informations.
 
 ## Tip
 
