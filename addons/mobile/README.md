@@ -5,7 +5,7 @@ A plugin used to display a help bar and tooltip on mobile devices. The help bar 
 When you activate `HelpBar` or `Tooltip` on a node, the signal connection is valid only for that node and not for nodes duplicated from it. If you duplicate several nodes at once with `HelpBar` or `Tooltip` enabled, you need to click on each duplicated node for the connections to work as expected.
 
 ## Installation
-Download the plugin from the [Godot Asset Library]() or  download it from [Github](https://github.com/sabinayo/godot-4-mobile-plugin/) and copy the "addons/mobile" folder into your Godot project directory.
+Download the plugin from the [Godot Asset Library](https://godotengine.org/asset-library/asset/3375) or  download it from [Github](https://github.com/sabinayo/godot-4-mobile-plugin/) and copy the "addons/mobile" folder into your Godot project directory.
 	Activate the plugin inside Project > Project settings > Plugins.
 
 
