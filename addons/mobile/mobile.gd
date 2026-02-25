@@ -49,6 +49,7 @@ var _help_bar_name := "godot-mobile-plugin-helpbar-scene";
 ## [/codeblock]
 ## See [code]Mobile.HelpBar.VirtualKeyboardType[/code] and [code]Mobile.HelpBar.Anchors[/code]
 func display_help_bar(data: Dictionary) -> void:
+	# Uncomment to test with your pc
 	if !DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
 		return;
 	
@@ -207,6 +208,7 @@ class HelpBar:
 		## Virtual keyboard with additional keys to assist with typing URLs.
 		KEYBOARD_TYPE_URL = 7,
 	};
+	
 	const Anchors := {
 		FULL_RECT = "Full Rect",
 		CENTER_WIDE = "Center wide",
@@ -358,52 +360,74 @@ class HelpBar:
 	
 	class ProjSettings:
 		const SAVE_PATH := "mobile/help_bar/";
-		const CONFIG_PATH := "%sconfiguration/" % SAVE_PATH;
-		const DISPLAY_PATH := "%sdisplay/" % SAVE_PATH;
-		const TIP_PATH := "%stip/" % SAVE_PATH;
-		const LINE_EDIT_PATH := "%sline_edit/" % SAVE_PATH;
+		const CONFIG_PATH := SAVE_PATH + "configuration/";
+		const DISPLAY_PATH := SAVE_PATH + "display/";
+		const TIP_PATH := SAVE_PATH + "tip/";
+		const LINE_EDIT_PATH := SAVE_PATH + "line_edit/";
+		const LABEL_SETTINGS_EXTENSIONS := "*.tres,*.res";
+		const STYLEBOX_EXTENSIONS := "*.tres,*.res,*.stylebox";
+		const AUDIO_FILE_EXTENSIONS := "*.wav,*.mp3,*.ogg";
+		const SCENE_EXTENSIONS := "*.tscn";
+		const CUSTOM_ANIMATION_EXTENSIONS := "*.gd,*.txt";
 		
 		const Paths := {
-			SCENE = "%sscene" % CONFIG_PATH,
-			HIDE_ON_EXTERNAL_EVENTS = "%shide_on_external_events" % CONFIG_PATH,
-			ENTER_SOUND = "%senter_sound" % CONFIG_PATH,
-			EXIT_SOUND = "%sexit_sound" % CONFIG_PATH,
-			AUDIO_BUS = "%saudio_bus" % CONFIG_PATH,
-			ANCHOR = "%sanchor" % DISPLAY_PATH,
-			BACKGROUND = "%sbackground" % DISPLAY_PATH,
-			FONT = "%sfont" % DISPLAY_PATH,
-			ENTER_ANIMATION = "%senter_animation" % DISPLAY_PATH,
-			CUSTOM_ENTER_ANIMATION = "%scustom_enter_animation" % DISPLAY_PATH,
-			EXIT_ANIMATION = "%sexit_animation" % DISPLAY_PATH,
-			CUSTOM_EXIT_ANIMATION = "%scustom_exit_animation" % DISPLAY_PATH,
-			TIP_BACKGROUND = "%stip_background" % TIP_PATH,
-			TIP_FONT = "%stip_font" % TIP_PATH,
-			LINE_EDIT_NORMAL_BACKGROUND = "%snormal_background" % LINE_EDIT_PATH,
-			LINE_EDIT_FOCUS_BACKGROUND = "%sfocus_background" % LINE_EDIT_PATH,
-			LINE_EDIT_FONT_SIZE = "%sfont_size" % LINE_EDIT_PATH,
+			#region HELPBAR CONFIG SETTINGS
+			SCENE = CONFIG_PATH + "scene",
+			HIDE_ON_EXTERNAL_EVENTS = CONFIG_PATH + "hide_on_external_events",
+			ENTER_SOUND = CONFIG_PATH + "enter_sound",
+			EXIT_SOUND = CONFIG_PATH + "exit_sound",
+			AUDIO_BUS = CONFIG_PATH + "audio_bus",
+			#endregion
+			#region HELPBAR DISPLAY SETTINGS
+			ANCHOR = DISPLAY_PATH + "anchor",
+			BACKGROUND = DISPLAY_PATH + "background",
+			FONT = DISPLAY_PATH + "font",
+			ENTER_ANIMATION = DISPLAY_PATH + "enter_animation",
+			CUSTOM_ENTER_ANIMATION = DISPLAY_PATH + "custom_enter_animation",
+			EXIT_ANIMATION = DISPLAY_PATH + "exit_animation",
+			CUSTOM_EXIT_ANIMATION = DISPLAY_PATH + "custom_exit_animation",
+			#endregion
+			#region HELPBAR TIP SETTINGS
+			TIP_BACKGROUND = TIP_PATH + "tip_background",
+			TIP_FONT = TIP_PATH + "tip_font",
+			#endregion
+			#region HELPBAR LINE_EDIT SETTINGS
+			LINE_EDIT_NORMAL_BACKGROUND = LINE_EDIT_PATH + "normal_background" ,
+			LINE_EDIT_FOCUS_BACKGROUND = LINE_EDIT_PATH + "focus_background" ,
+			LINE_EDIT_FONT_SIZE = LINE_EDIT_PATH + "font_size" ,
+			#endregion
 		};
 		
 		const DefaultValues := {
+			#region HELPBAR CONFIG SETTINGS
 			SCENE = "res://addons/mobile/help_bar/help_bar.tscn",
 			HIDE_ON_EXTERNAL_EVENTS = false,
 			ENTER_SOUND = "",
 			EXIT_SOUND = "",
 			AUDIO_BUS = "Master",
+			#endregion
+			#region HELPBAR DISPLAY SETTINGS
 			ANCHOR = Anchors.FULL_RECT,
-			BACKGROUND = preload("themes/help_bar_background.tres"),
-			FONT = preload("themes/help_bar_font.tres"),
+			BACKGROUND = "res://addons/mobile/themes/help_bar_background.tres",
+			FONT = "res://addons/mobile/themes/help_bar_font.tres",
 			ENTER_ANIMATION = "Fade",
 			CUSTOM_ENTER_ANIMATION = "",
 			EXIT_ANIMATION = "Fade",
 			CUSTOM_EXIT_ANIMATION = "",
+			#endregion
+			#region HELPBAR TIP SETTINGS
 			TIP_FONT = "",
-			TIP_BACKGROUND = preload("themes/help_bar_tip_background.tres"),
-			LINE_EDIT_NORMAL_BACKGROUND = preload("themes/help_bar_line_edit_normal_bg.tres"),
-			LINE_EDIT_FOCUS_BACKGROUND = preload("themes/help_bar_line_edit_focus_bg.tres"),
+			TIP_BACKGROUND = "res://addons/mobile/themes/help_bar_tip_background.tres",
+			#endregion
+			#region HELPBAR LINE_EDIT SETTINGS
+			LINE_EDIT_NORMAL_BACKGROUND = "res://addons/mobile/themes/help_bar_line_edit_normal_bg.tres",
+			LINE_EDIT_FOCUS_BACKGROUND = "res://addons/mobile/themes/help_bar_line_edit_focus_bg.tres",
 			LINE_EDIT_FONT_SIZE = 40,
+			#endregion
 		};
 		
 		const CONFIG: Array[Dictionary] = [
+			#region HELPBAR CONFIG SETTINGS
 			{
 				"path": Paths.SCENE,
 				"default_value": DefaultValues.SCENE,
@@ -412,7 +436,7 @@ class HelpBar:
 					"name": Paths.SCENE,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.tscn",
+					"hint_string": SCENE_EXTENSIONS,
 				},
 			},
 			{
@@ -432,7 +456,7 @@ class HelpBar:
 					"name": Paths.ENTER_SOUND,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.wav,*.mp3,*.ogg",
+					"hint_string": AUDIO_FILE_EXTENSIONS,
 				},
 			},
 			{
@@ -443,7 +467,7 @@ class HelpBar:
 					"name": Paths.EXIT_SOUND,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.wav,*.mp3,*.ogg",
+					"hint_string": AUDIO_FILE_EXTENSIONS,
 				},
 			},
 			{
@@ -455,7 +479,8 @@ class HelpBar:
 					"type": TYPE_STRING,
 				},
 			},
-			
+			#endregion
+			#region HELPBAR DISPLAY SETTINGS
 			{
 				"path": Paths.ANCHOR,
 				"default_value": DefaultValues.ANCHOR,
@@ -473,9 +498,9 @@ class HelpBar:
 				"value": DefaultValues.BACKGROUND,
 				"infos": {
 					"name": Paths.BACKGROUND,
-					"type": TYPE_OBJECT,
-					"hint": PROPERTY_HINT_RESOURCE_TYPE,
-					"hint_string": "StyleBox",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_FILE,
+					"hint_string": STYLEBOX_EXTENSIONS,
 				},
 			},
 			{
@@ -484,9 +509,9 @@ class HelpBar:
 				"value": DefaultValues.FONT,
 				"infos": {
 					"name": Paths.FONT,
-					"type": TYPE_OBJECT,
-					"hint": PROPERTY_HINT_RESOURCE_TYPE,
-					"hint_string": "LabelSettings",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_FILE,
+					"hint_string": LABEL_SETTINGS_EXTENSIONS,
 				},
 			},
 			{
@@ -508,7 +533,7 @@ class HelpBar:
 					"name": Paths.CUSTOM_ENTER_ANIMATION,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.gd,*.txt",
+					"hint_string": CUSTOM_ANIMATION_EXTENSIONS,
 				},
 			},
 			{
@@ -530,18 +555,20 @@ class HelpBar:
 					"name": Paths.CUSTOM_EXIT_ANIMATION,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.gd,*.txt",
+					"hint_string": CUSTOM_ANIMATION_EXTENSIONS,
 				},
 			},
+			#endregion
+			#region HELPBAR TIP SETTINGS
 			{
 				"path": Paths.TIP_BACKGROUND,
 				"default_value": DefaultValues.TIP_BACKGROUND,
 				"value": DefaultValues.TIP_BACKGROUND,
 				"infos": {
 					"name": Paths.TIP_BACKGROUND,
-					"type": TYPE_OBJECT,
-					"hint": PROPERTY_HINT_RESOURCE_TYPE,
-					"hint_string": "StyleBox",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_FILE,
+					"hint_string": STYLEBOX_EXTENSIONS,
 				},
 			},
 			{
@@ -550,20 +577,22 @@ class HelpBar:
 				"value": DefaultValues.TIP_FONT,
 				"infos": {
 					"name": Paths.TIP_FONT,
-					"type": TYPE_OBJECT,
-					"hint": PROPERTY_HINT_RESOURCE_TYPE,
-					"hint_string": "LabelSettings",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_FILE,
+					"hint_string": LABEL_SETTINGS_EXTENSIONS,
 				},
 			},
+			#endregion
+			#region HELPBAR LINE_EDIT SETTINGS
 			{
 				"path": Paths.LINE_EDIT_NORMAL_BACKGROUND,
 				"default_value": DefaultValues.LINE_EDIT_NORMAL_BACKGROUND,
 				"value": DefaultValues.LINE_EDIT_NORMAL_BACKGROUND,
 				"infos": {
 					"name": Paths.LINE_EDIT_NORMAL_BACKGROUND,
-					"type": TYPE_OBJECT,
-					"hint": PROPERTY_HINT_RESOURCE_TYPE,
-					"hint_string": "StyleBox",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_FILE,
+					"hint_string": STYLEBOX_EXTENSIONS,
 				},
 			},
 			{
@@ -572,9 +601,9 @@ class HelpBar:
 				"value": DefaultValues.LINE_EDIT_FOCUS_BACKGROUND,
 				"infos": {
 					"name": Paths.LINE_EDIT_FOCUS_BACKGROUND,
-					"type": TYPE_OBJECT,
-					"hint": PROPERTY_HINT_RESOURCE_TYPE,
-					"hint_string": "StyleBox",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_FILE,
+					"hint_string": STYLEBOX_EXTENSIONS,
 				},
 			},
 			{
@@ -586,9 +615,10 @@ class HelpBar:
 					"type": TYPE_INT,
 				},
 			},
+			#endregion
 		];
 
-
+## Provides information indented to be used by the user or plugin scripts.
 class Tooltip:
 	const Anims := {
 		NONE = "None",
@@ -762,38 +792,48 @@ class Tooltip:
 	
 	class ProjSettings:
 		const SAVE_PATH := "mobile/tooltip/";
-		const CONFIG_PATH := "%sconfiguration/" % SAVE_PATH;
-		const DISPLAY_PATH := "%sdisplay/" % SAVE_PATH;
+		const CONFIG_PATH := SAVE_PATH + "configuration/";
+		const DISPLAY_PATH := SAVE_PATH + "display/";
+		const LABEL_SETTINGS_EXTENSIONS := "*.tres,*.res";
+		const STYLEBOX_EXTENSIONS := "*.tres,*.res,*.stylebox";
+		const AUDIO_FILE_EXTENSIONS := "*.wav,*.mp3,*.ogg";
+		const SCENE_EXTENSIONS := "*.tscn";
+		const CUSTOM_ANIMATION_EXTENSIONS := "*.gd,*.txt";
 		
 		const Paths := {
-			SCENE = "%sscene" % CONFIG_PATH,
-			TOOLTIP_DELAY_SEC = "%stooltip_delay_sec" % CONFIG_PATH,
-			HIDE_AFTER_SEC = "%shide_after_sec" % CONFIG_PATH,
-			SAFE_DELETION_TIME_SEC = "%ssafe_deletion_time_sec" % CONFIG_PATH,
-			DELAY_BEFORE_EXIT_SEC = "%sdelay_before_exit_sec" % CONFIG_PATH,
-			HIDE_ON_SCREEN_DRAG = "%shide_on_screen_drag" % CONFIG_PATH,
-			HIDE_ON_NEXT_TOUCH_EVENT = "%shide_on_next_touch_event" % CONFIG_PATH,
-			DISPLAY_ON_SINGLE_TOUCH = "%sdisplay_on_single_touch" % CONFIG_PATH,
-			MAX_TOOLTIP = "%smax_tooltip" % CONFIG_PATH,
-			MARGIN = "%smargin" % CONFIG_PATH,
-			INDICATOR_MARGIN = "%sindicator_margin" % CONFIG_PATH,
-			ENTER_SOUND = "%senter_sound" % CONFIG_PATH,
-			EXIT_SOUND = "%sexit_sound" % CONFIG_PATH,
-			AUDIO_BUS = "%saudio_bus" % CONFIG_PATH,
-			DEFAULT_POSITION = "%sdefault_position" % DISPLAY_PATH,
-			DISPLAY_REQUESTER_INDICATOR = "%sdisplay_requester_indicator" % DISPLAY_PATH,
-			REQUESTER_INDICATOR_ANIMATION = "%srequester_indicator_animation" % DISPLAY_PATH,
-			TEXT_HORIZONTAL_ALIGNMENT = "%stext_horizontal_alignment" % DISPLAY_PATH,
-			TEXT_VERTICAL_ALIGNMENT = "%stext_vertical_alignment" % DISPLAY_PATH,
-			BACKGROUND = "%sbackground" % DISPLAY_PATH,
-			FONT = "%sfont" % DISPLAY_PATH,
-			ENTER_ANIMATION = "%senter_animation" % DISPLAY_PATH,
-			CUSTOM_ENTER_ANIMATION = "%scustom_enter_animation" % DISPLAY_PATH,
-			EXIT_ANIMATION = "%sexit_animation" % DISPLAY_PATH,
-			CUSTOM_EXIT_ANIMATION = "%scustom_exit_animation" % DISPLAY_PATH,
+			#region TOOLTIP CONFIG SETTINGS
+			SCENE = CONFIG_PATH + "scene",
+			TOOLTIP_DELAY_SEC = CONFIG_PATH + "tooltip_delay_sec",
+			HIDE_AFTER_SEC = CONFIG_PATH + "hide_after_sec",
+			SAFE_DELETION_TIME_SEC = CONFIG_PATH + "safe_deletion_time_sec",
+			DELAY_BEFORE_EXIT_SEC = CONFIG_PATH + "delay_before_exit_sec",
+			HIDE_ON_SCREEN_DRAG = CONFIG_PATH + "hide_on_screen_drag",
+			HIDE_ON_NEXT_TOUCH_EVENT = CONFIG_PATH + "hide_on_next_touch_event",
+			DISPLAY_ON_SINGLE_TOUCH = CONFIG_PATH + "display_on_single_touch",
+			MAX_TOOLTIP = CONFIG_PATH + "max_tooltip",
+			MARGIN = CONFIG_PATH + "margin",
+			INDICATOR_MARGIN = CONFIG_PATH + "indicator_margin",
+			ENTER_SOUND = CONFIG_PATH + "enter_sound",
+			EXIT_SOUND = CONFIG_PATH + "exit_sound",
+			AUDIO_BUS = CONFIG_PATH + "audio_bus",
+			#endregion
+			#region TOOLTIP DISPLAY SETTINGS
+			DEFAULT_POSITION = DISPLAY_PATH + "default_position",
+			DISPLAY_REQUESTER_INDICATOR = DISPLAY_PATH + "display_requester_indicator",
+			REQUESTER_INDICATOR_ANIMATION = DISPLAY_PATH + "requester_indicator_animation",
+			TEXT_HORIZONTAL_ALIGNMENT = DISPLAY_PATH + "text_horizontal_alignment",
+			TEXT_VERTICAL_ALIGNMENT = DISPLAY_PATH + "text_vertical_alignment",
+			BACKGROUND = DISPLAY_PATH + "background",
+			FONT = DISPLAY_PATH + "font",
+			ENTER_ANIMATION = DISPLAY_PATH + "enter_animation",
+			CUSTOM_ENTER_ANIMATION = DISPLAY_PATH + "custom_enter_animation",
+			EXIT_ANIMATION = DISPLAY_PATH + "exit_animation",
+			CUSTOM_EXIT_ANIMATION = DISPLAY_PATH + "custom_exit_animation",
+			#endregion
 		};
 		
 		const DefaultValues := {
+			#region TOOLTIP CONFIG SETTINGS
 			SCENE = "res://addons/mobile/tooltip/tooltip.tscn",
 			TOOLTIP_DELAY_SEC = 0.5,
 			HIDE_AFTER_SEC = -1,
@@ -808,20 +848,24 @@ class Tooltip:
 			ENTER_SOUND = "",
 			EXIT_SOUND = "",
 			AUDIO_BUS = "Master",
+			#endregion
+			#region TOOLTIP DISPLAY SETTINGS
 			DEFAULT_POSITION = Positions.ABOVE,
 			DISPLAY_REQUESTER_INDICATOR = true,
 			REQUESTER_INDICATOR_ANIMATION = "Fade",
 			TEXT_HORIZONTAL_ALIGNMENT = TEXT_H_ALIGNMENTS.LEFT,
 			TEXT_VERTICAL_ALIGNMENT = TEXT_V_ALIGNMENTS.TOP,
-			BACKGROUND = preload("themes/tooltip_backgroud.tres"),
-			FONT = preload("themes/tooltip_font.tres"),
+			BACKGROUND = "res://addons/mobile/themes/tooltip_backgroud.tres",
+			FONT = "res://addons/mobile/themes/tooltip_font.tres",
 			ENTER_ANIMATION = "Fade",
 			CUSTOM_ENTER_ANIMATION = "",
 			EXIT_ANIMATION = "Fade",
 			CUSTOM_EXIT_ANIMATION = "",
+			#endregion
 		};
 		
 		const CONFIG: Array[Dictionary] = [
+			#region TOOLTIP CONFIG SETTINGS
 			{
 				"path": Paths.SCENE,
 				"default_value": DefaultValues.SCENE,
@@ -830,7 +874,7 @@ class Tooltip:
 					"name": Paths.SCENE,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.tscn",
+					"hint_string": SCENE_EXTENSIONS,
 				},
 			},
 			{
@@ -941,7 +985,7 @@ class Tooltip:
 					"name": Paths.ENTER_SOUND,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.wav,*.mp3,*.ogg",
+					"hint_string": AUDIO_FILE_EXTENSIONS,
 				},
 			},
 			{
@@ -952,7 +996,7 @@ class Tooltip:
 					"name": Paths.EXIT_SOUND,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.wav,*.mp3,*.ogg",
+					"hint_string": AUDIO_FILE_EXTENSIONS,
 				},
 			},
 			{
@@ -964,6 +1008,8 @@ class Tooltip:
 					"type": TYPE_STRING,
 				},
 			},
+			#endregion
+			#region TOOLTIP DISPLAY SETTINGS
 			{
 				"path": Paths.DEFAULT_POSITION,
 				"default_value": DefaultValues.DEFAULT_POSITION,
@@ -1023,9 +1069,9 @@ class Tooltip:
 				"value": DefaultValues.BACKGROUND,
 				"infos": {
 					"name": Paths.BACKGROUND,
-					"type": TYPE_OBJECT,
-					"hint": PROPERTY_HINT_RESOURCE_TYPE,
-					"hint_string": "StyleBoxTexture,StyleBoxFlat",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_FILE,
+					"hint_string": STYLEBOX_EXTENSIONS,
 				},
 			},
 			{
@@ -1034,9 +1080,9 @@ class Tooltip:
 				"value": DefaultValues.FONT,
 				"infos": {
 					"name": Paths.FONT,
-					"type": TYPE_OBJECT,
-					"hint": PROPERTY_HINT_RESOURCE_TYPE,
-					"hint_string": "LabelSettings",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_FILE,
+					"hint_string": LABEL_SETTINGS_EXTENSIONS,
 				},
 			},
 			{
@@ -1058,7 +1104,7 @@ class Tooltip:
 					"name": Paths.CUSTOM_ENTER_ANIMATION,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.gd,*.txt",
+					"hint_string": CUSTOM_ANIMATION_EXTENSIONS,
 				},
 			},
 			{
@@ -1080,7 +1126,8 @@ class Tooltip:
 					"name": Paths.CUSTOM_EXIT_ANIMATION,
 					"type": TYPE_STRING,
 					"hint": PROPERTY_HINT_FILE,
-					"hint_string": "*.gd,*.txt",
+					"hint_string": CUSTOM_ANIMATION_EXTENSIONS,
 				},
 			},
+			#endregion
 		];
