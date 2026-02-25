@@ -329,10 +329,10 @@ func _set_setting(setting: String, value: Variant) -> void:
 			_set_aligment(false, value);
 		
 		Mobile.Tooltip.ProjSettings.Paths.FONT:
-			label_settings = value;
+			label_settings = load(value);
 		
 		Mobile.Tooltip.ProjSettings.Paths.BACKGROUND:
-			set("theme_override_styles/normal", value);
+			set("theme_override_styles/normal", load(value));
 			
 			%requester_indicator.set(
 				"theme_override_styles/panel/bg_color",
@@ -532,6 +532,7 @@ func _start_animation() -> void:
 		Mobile.Tooltip.Anims.BOUNCE:
 			var pivot: Vector2 = Mobile.Tooltip.AnimsSettings.Bounce.pivot;
 			pivot_offset = size * pivot / 100;
+			
 			%anim.play("BOUNCE");
 			await %anim.animation_finished;
 			_place_requester_indicator();
@@ -539,6 +540,7 @@ func _start_animation() -> void:
 		Mobile.Tooltip.Anims.SCALE:
 			var pivot: Vector2 = Mobile.Tooltip.AnimsSettings.Scale.pivot;
 			pivot_offset = size * pivot / 100;
+			
 			%anim.play("SCALE");
 			await %anim.animation_finished;
 			_place_requester_indicator();
@@ -546,6 +548,7 @@ func _start_animation() -> void:
 		Mobile.Tooltip.Anims.SCALE_X:
 			var pivot: Vector2 = Mobile.Tooltip.AnimsSettings.ScaleX.pivot;
 			pivot_offset = size * pivot / 100;
+			
 			%anim.play("SCALE_X");
 			await %anim.animation_finished;
 			_place_requester_indicator();
@@ -553,6 +556,7 @@ func _start_animation() -> void:
 		Mobile.Tooltip.Anims.SCALE_Y:
 			var pivot: Vector2 = Mobile.Tooltip.AnimsSettings.ScaleY.pivot;
 			pivot_offset = size * pivot / 100;
+			
 			%anim.play("SCALE_Y");
 			await %anim.animation_finished;
 			_place_requester_indicator();
@@ -560,6 +564,7 @@ func _start_animation() -> void:
 		Mobile.Tooltip.Anims.POP:
 			var pivot: Vector2 = Mobile.Tooltip.AnimsSettings.Pop.pivot;
 			pivot_offset = size * pivot / 100;
+			
 			%anim.play("POP");
 			await %anim.animation_finished;
 			_place_requester_indicator();
@@ -572,6 +577,7 @@ func _start_requester_indicator_animation() -> void:
 		Mobile.Tooltip.RequesterIndicatorAnims.FADE:
 			var tween: Tween = create_tween();
 			%requester_indicator.modulate.a = Mobile.Tooltip.AnimsSettings.FadeIn.fromAlpha;
+			
 			tween.tween_property(
 				%requester_indicator, "modulate:a",
 				Mobile.Tooltip.AnimsSettings.FadeIn.toAlpha,
@@ -749,12 +755,14 @@ func delete(just_after_display := false) -> void:
 
 
 func _play_sound(stream: String) -> void:
-	if stream == "" or not stream.is_absolute_path(): return;
+	if stream == "" or not stream.is_absolute_path():
+		return;
 	
 	var stream_player := AudioStreamPlayer.new();
 	stream_player.stream = load(stream);
 	stream_player.bus = audio_bus;
 	get_tree().current_scene.add_child(stream_player);
+	
 	stream_player.play();
 	await stream_player.finished;
 	stream_player.queue_free();

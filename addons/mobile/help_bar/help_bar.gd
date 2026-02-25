@@ -191,23 +191,23 @@ func _on_edition_text_submitted(new_text: String) -> void:
 func _set_setting(setting: String, value: Variant) -> void:
 	match setting:
 		Mobile.HelpBar.ProjSettings.Paths.BACKGROUND:
-			set("theme_override_styles/panel", value);
+			set("theme_override_styles/panel", load(value));
 		
 		Mobile.HelpBar.ProjSettings.Paths.TIP_BACKGROUND:
-			%tip.set("theme_override_styles/normal", value);
+			%tip.set("theme_override_styles/normal", load(value));
 		
 		Mobile.HelpBar.ProjSettings.Paths.TIP_FONT:
 			if value is String:
-				%tip.label_settings = ProjectSettings.get_setting(
+				%tip.label_settings = load(ProjectSettings.get_setting(
 					Mobile.HelpBar.ProjSettings.Paths.FONT,
 					Mobile.HelpBar.ProjSettings.DefaultValues.FONT
-				);
+				));
 			
 			else:
-				%tip.label_settings = value;
+				%tip.label_settings = load(value);
 		
 		Mobile.HelpBar.ProjSettings.Paths.LINE_EDIT_NORMAL_BACKGROUND:
-			%edition.set("theme_override_styles/normal", value);
+			%edition.set("theme_override_styles/normal", load(value));
 		
 		Mobile.HelpBar.ProjSettings.Paths.ENTER_ANIMATION: enter_anim = value;
 		
@@ -226,17 +226,16 @@ func _set_setting(setting: String, value: Variant) -> void:
 			custom_exit_anim = value;
 		
 		Mobile.HelpBar.ProjSettings.Paths.LINE_EDIT_FOCUS_BACKGROUND:
-			%edition.set("theme_override_styles/focus", value);
+			%edition.set("theme_override_styles/focus", load(value));
 		
 		Mobile.HelpBar.ProjSettings.Paths.LINE_EDIT_FONT_SIZE:
 			%edition.set("theme_override_font_sizes/font_size", value);
 		
 		Mobile.HelpBar.ProjSettings.Paths.LINE_EDIT_NORMAL_BACKGROUND:
-			%edition.set("theme_override_styles/normal", value);
+			%edition.set("theme_override_styles/normal", load(value));
 			
 		Mobile.HelpBar.ProjSettings.Paths.HIDE_ON_EXTERNAL_EVENTS:
 			_hide_on_external_events = value;
-			
 
 
 func _load_settings() -> void:
