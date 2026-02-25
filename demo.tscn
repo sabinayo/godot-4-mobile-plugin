@@ -12,99 +12,148 @@ grow_vertical = 2
 metadata/signals_manager_path = "mobile_plugin_signals_manager"
 metadata/tooltip_on_mobile = false
 
-[node name="Button" type="Button" parent="."]
+[node name="CUSTOM_ANIMATION" type="Button" parent="."]
 layout_mode = 0
 offset_left = 626.0
 offset_top = 446.0
 offset_right = 764.0
 offset_bottom = 528.0
-tooltip_text = "A tooltip with custom animation."
-text = "CLICK ME"
+tooltip_text = "A tooltip with custom animation.
+You can write your own in gdscript !"
+text = "Custom tooltip animation"
+autowrap_mode = 3
 metadata/signals_manager_path = "../mobile_plugin_signals_manager"
 metadata/tooltip_on_mobile = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="TooltipInfo1" type="Button" parent="."]
 layout_mode = 0
 offset_left = 451.0
 offset_top = 446.0
 offset_right = 589.0
 offset_bottom = 528.0
-tooltip_text = "Thanks for your submission !"
-text = "Submit"
+tooltip_text = "You can adjust general tooltip
+settings in project settings.
+Be sure to enable 'Advanced Settings'"
+text = "CLICK ME !"
+autowrap_mode = 3
 metadata/signals_manager_path = "../mobile_plugin_signals_manager"
 metadata/tooltip_on_mobile = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="TooltipInfo2" type="Button" parent="."]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 446.0
 offset_right = 938.0
 offset_bottom = 528.0
-tooltip_text = "Thanks for your submission !"
-text = "Submit"
+tooltip_text = "You can also adjust tooltip
+individually by creating a
+MobileFastTooltipSettings.
+Be sure to check the 'Overrides'
+section in the tooltip area."
+text = "CLICK ME !"
 metadata/signals_manager_path = "../mobile_plugin_signals_manager"
 metadata/tooltip_on_mobile = true
 
-[node name="Button5" type="Button" parent="."]
-layout_mode = 0
-offset_top = 631.0
-offset_right = 138.0
-offset_bottom = 713.0
-tooltip_text = "Thanks for your submission !"
-text = "Submit"
-metadata/signals_manager_path = "../mobile_plugin_signals_manager"
-metadata/tooltip_on_mobile = true
-
-[node name="Button6" type="Button" parent="."]
-layout_mode = 0
+[node name="ButtonTopLeft" type="Button" parent="."]
+layout_mode = 1
 offset_right = 138.0
 offset_bottom = 82.0
-tooltip_text = "Thanks for your submission !"
-text = "Submit"
+tooltip_text = "You can customise almost everything
+in: Project > ProjectSettings > Mobile"
+text = "CLICK ME !"
 metadata/signals_manager_path = "../mobile_plugin_signals_manager"
 metadata/tooltip_on_mobile = true
 
-[node name="Button7" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1128.0
-offset_right = 1266.0
-offset_bottom = 82.0
-tooltip_text = "Thanks for your submission !"
-text = "Submit"
-metadata/signals_manager_path = "../mobile_plugin_signals_manager"
-metadata/tooltip_on_mobile = true
-
-[node name="Button8" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1045.0
-offset_top = 631.0
-offset_right = 1183.0
-offset_bottom = 713.0
-tooltip_text = "Thanks for your submission !"
-text = "Submit"
-metadata/signals_manager_path = "../mobile_plugin_signals_manager"
-metadata/tooltip_on_mobile = true
-
-[node name="Button9" type="Button" parent="."]
-layout_mode = 0
-offset_top = 330.0
+[node name="ButtonMiddleLeft" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -41.0
 offset_right = 138.0
-offset_bottom = 412.0
-tooltip_text = "Thanks for your submission !"
-text = "Submit"
+offset_bottom = 41.0
+grow_vertical = 2
+tooltip_text = "A tooltip from a middle left button !"
+text = "CLICK ME !"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="ButtonBottomLeft" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -82.0
+offset_right = 138.0
+grow_vertical = 0
+tooltip_text = "A tooltip from a bottom left button !"
+text = "CLICK ME !"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="ButtonTopRight" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_bottom = 82.0
+grow_horizontal = 0
+tooltip_text = "You can also adjust help bar
+individually by creating a
+MobileFastHelpBarSettings.
+Be sure to check the 'Overrides'
+section in the tooltip area."
+text = "CLICK ME !"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="ButtonMiddleRight" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -41.0
+offset_bottom = 41.0
+grow_horizontal = 0
+grow_vertical = 2
+tooltip_text = "A tooltip from a middle right button !"
+text = "CLICK ME !"
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
+metadata/tooltip_on_mobile = true
+
+[node name="ButtonBottomRight" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -138.0
+offset_top = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "A tooltip from a bottom right button !"
+text = "CLICK ME !"
 metadata/signals_manager_path = "../mobile_plugin_signals_manager"
 metadata/tooltip_on_mobile = true
 
 [node name="LineEdit" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 527.0
-offset_top = 82.0
-offset_right = 823.0
-offset_bottom = 168.0
-placeholder_text = "Write a comment..."
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -364.5
+offset_right = 364.5
+offset_bottom = 126.0
+grow_horizontal = 2
+placeholder_text = "By default, only a device with virtual keyboard can display the help bar, click here to test !"
 alignment = 1
 metadata/signals_manager_path = "../mobile_plugin_signals_manager"
-metadata/mobile_help_bar_tip = "Write a comment"
+metadata/mobile_help_bar_tip = "This is a test !"
 metadata/mobile_help_bar_anchor = 3
 metadata/mobile_help_bar_keyboard = 0
 metadata/mobile_help_bar_enabled = true
@@ -140,41 +189,48 @@ metadata/tooltip_overrides = {
 "mobile/tooltip/display/requester_indicator_animation": "None",
 "mobile/tooltip/display/text_horizontal_alignment": "Center",
 "mobile/tooltip/display/text_vertical_alignment": "Center"
+},
+"../CUSTOM_ANIMATION": {
+"mobile/tooltip/display/custom_enter_animation": "uid://dv1oekdi0xdap",
+"mobile/tooltip/display/custom_exit_animation": "uid://6ds6h8cbantl"
 }
 }
 metadata/help_bar_overrides = {
 "../LineEdit": {}
 }
 
-[connection signal="gui_input" from="Button" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
-"requester": "../Button"
+[connection signal="gui_input" from="CUSTOM_ANIMATION" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../CUSTOM_ANIMATION"
 }]]
-[connection signal="gui_input" from="Button2" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
-"requester": "../Button2"
+[connection signal="gui_input" from="TooltipInfo1" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../TooltipInfo1"
 }]]
-[connection signal="gui_input" from="Button3" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
-"requester": "../Button3"
+[connection signal="gui_input" from="TooltipInfo2" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../TooltipInfo2"
 }]]
-[connection signal="gui_input" from="Button5" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
-"requester": "../Button5"
+[connection signal="gui_input" from="ButtonTopLeft" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../ButtonTopLeft"
 }]]
-[connection signal="gui_input" from="Button6" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
-"requester": "../Button6"
+[connection signal="gui_input" from="ButtonMiddleLeft" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../ButtonMiddleLeft"
 }]]
-[connection signal="gui_input" from="Button7" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
-"requester": "../Button7"
+[connection signal="gui_input" from="ButtonBottomLeft" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../ButtonBottomLeft"
 }]]
-[connection signal="gui_input" from="Button8" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
-"requester": "../Button8"
+[connection signal="gui_input" from="ButtonTopRight" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../ButtonTopRight"
 }]]
-[connection signal="gui_input" from="Button9" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
-"requester": "../Button9"
+[connection signal="gui_input" from="ButtonMiddleRight" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../ButtonMiddleRight"
+}]]
+[connection signal="gui_input" from="ButtonBottomRight" to="mobile_plugin_signals_manager" method="_on_tooltip_gui_input" binds= [{
+"requester": "../ButtonBottomRight"
 }]]
 [connection signal="gui_input" from="LineEdit" to="mobile_plugin_signals_manager" method="_on_help_bar_gui_input" binds= [{
 "mobile_help_bar_anchor": 3,
 "mobile_help_bar_enabled": true,
 "mobile_help_bar_keyboard": 0,
-"mobile_help_bar_tip": "Write a comment",
+"mobile_help_bar_tip": "This is a test !",
 "requester": "../LineEdit"
 }]]
 [connection signal="gui_input" from="SpinBox" to="mobile_plugin_signals_manager" method="_on_help_bar_gui_input" binds= [{
