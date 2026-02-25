@@ -191,8 +191,8 @@ metadata/tooltip_overrides = {
 "mobile/tooltip/display/text_vertical_alignment": "Center"
 },
 "../CUSTOM_ANIMATION": {
-"mobile/tooltip/display/custom_enter_animation": "uid://dv1oekdi0xdap",
-"mobile/tooltip/display/custom_exit_animation": "uid://6ds6h8cbantl"
+"mobile/tooltip/display/custom_enter_animation": "res://addons/mobile/custom_animation/fade_in_custom.gd",
+"mobile/tooltip/display/custom_exit_animation": "res://addons/mobile/custom_animation/fade_out_custom.gd"
 }
 }
 metadata/help_bar_overrides = {

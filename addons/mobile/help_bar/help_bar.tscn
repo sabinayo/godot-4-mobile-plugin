@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://hrg2br4xttnv"]
 
 [ext_resource type="Script" path="res://addons/mobile/help_bar/help_bar.gd" id="1_n7hfv"]
-[ext_resource type="StyleBox" path="res://addons/mobile/themes/help_bar_background.tres" id="1_ttje2"]
+[ext_resource type="StyleBox" uid="uid://da65pgdyb2r71" path="res://addons/mobile/themes/help_bar_background.tres" id="1_ttje2"]
 [ext_resource type="StyleBox" uid="uid://bf333c00548vq" path="res://addons/mobile/themes/help_bar_tip_background.tres" id="3_kt301"]
-[ext_resource type="LabelSettings" path="res://addons/mobile/themes/help_bar_font.tres" id="4_sjydv"]
+[ext_resource type="LabelSettings" uid="uid://im75nv30wj74" path="res://addons/mobile/themes/help_bar_font.tres" id="4_sjydv"]
 [ext_resource type="StyleBox" uid="uid://b5ar0ykwkm3wg" path="res://addons/mobile/themes/help_bar_line_edit_normal_bg.tres" id="5_s71jj"]
 [ext_resource type="StyleBox" uid="uid://cg4ycn4477hm0" path="res://addons/mobile/themes/help_bar_line_edit_focus_bg.tres" id="6_x5w74"]
 [ext_resource type="PackedScene" uid="uid://f4tiqnp8tflm" path="res://addons/mobile/signals_manager/signals_manager.tscn" id="7_j4blj"]
@@ -221,8 +221,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = ExtResource("5_s71jj")
 theme_override_styles/focus = ExtResource("6_x5w74")
+theme_override_styles/normal = ExtResource("5_s71jj")
 alignment = 1
 context_menu_enabled = false
 clear_button_enabled = true
