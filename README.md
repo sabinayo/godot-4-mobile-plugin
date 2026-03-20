@@ -1,13 +1,22 @@
-﻿# Godot Mobile Plugin
-A plugin used to display a help bar and tooltip on mobile devices. The help bar is displayed when the user is about to write text in the application.
+# Godot Mobile Plugin
+A plugin used to display a help bar and tooltip(s) on mobile devices. The help bar is displayed when the user is about to write text in the application.
 
 ## Notes
-When you activate `HelpBar` or `Tooltip` on a node, the signal connection is valid only for that node and not for nodes duplicated from it. If you duplicate several nodes at once with `HelpBar` or `Tooltip` enabled, you need to click on each duplicated node for the connections to work as expected.
+When you activate `HelpBar` or `Tooltip` on a node, the signal connection only applies to that node and not to any nodes that have been duplicated from it. If you duplicate several nodes with `HelpBar` or `Tooltip` enabled, you need to click on each duplicate for the signal connections to be recreated and work as expected.
 
 ## Installation
-Download the plugin from the [Godot Asset Library](https://godotengine.org/asset-library/asset/3375) or  download it from [Github](https://github.com/sabinayo/godot-4-mobile-plugin/) and copy the "addons/mobile" folder into your Godot project directory.
-	Activate the plugin inside Project > Project settings > Plugins.
+Download the plugin from the [Godot Asset Library](https://godotengine.org/asset-library/asset/3375) or  download it from [Github](https://github.com/sabinayo/godot-4-mobile-plugin/releases) and copy the `addons` folder into your Godot project directory. Activate the plugin at `Project > Project settings > Plugins`.
 
+To test the plugin directly on your PC, go to `Project > Project Settings` and enable `enable_touch_from_mouse`.  
+![Enable touch emulation with mouse in godot project](https://raw.githubusercontent.com/sabinayo/godot-4-mobile-plugin/refs/heads/main/screenshots/test_plugin_with_pc.png)  
+Then load the demo scene located at `addons/mobile/examples/demo.tscn`.
+By default, only a device with a virtual keyboard can display the help bar. In order to test this on your PC, you can comment the restrictor in the `display_help_bar` method of the `mobile.gd` script, as mentioned below.
+```gdscript
+func display_help_bar(data: Dictionary) -> void:
+# Comment this part to test the help bar with your PC
+if !DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
+	return
+```
 
 ## How to use
 
@@ -35,8 +44,7 @@ If you intend to use a node inheriting from BaseButton in order to display a too
 
 ## Additional notes
 
-You can use predifined animations when help bar or tooltip appears or disappears. You can also use custom animations. Custom animations are user-coded animations and must be written according the [Custom Animations Guideline](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md).
-You can use `.gd` or `.txt` files to write your code.
+You can use predifined animations when help bar or tooltip appears or disappears. You can also use custom animations written in gdscript. Be aware that custom animations have to be written according the [Custom Animations Guideline](https://github.com/sabinayo/godot-4-mobile-plugin/blob/main/doc/CUSTOM%20ANIMATIONS%20GUIDELINE.md).
 
 ## Documentation
 
