@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bxuua7lg2b6gq"]
 
 [ext_resource type="Script" path="res://addons/mobile/help_bar/help_bar_settings.gd" id="1_eujja"]
-[ext_resource type="Texture2D" uid="uid://c7d17gqxkeg2j" path="res://addons/mobile/icons/help_bar_full_rect.svg" id="2_82jyy"]
-[ext_resource type="Texture2D" uid="uid://cwayjup5ph6he" path="res://addons/mobile/icons/help_bar_center_wide.svg" id="3_cm0vq"]
-[ext_resource type="Texture2D" uid="uid://dch1d2oihncqi" path="res://addons/mobile/icons/help_bar_bottom_wide.svg" id="4_7deiu"]
-[ext_resource type="Texture2D" uid="uid://c53ric25623iu" path="res://addons/mobile/icons/help_bar_top_wide.svg" id="5_ej7xq"]
+[ext_resource type="Texture2D" uid="uid://0kxiagmkpfim" path="res://addons/mobile/icons/help_bar_full_rect.svg" id="2_82jyy"]
+[ext_resource type="Texture2D" uid="uid://c0txuuf6ib1e" path="res://addons/mobile/icons/help_bar_center_wide.svg" id="3_cm0vq"]
+[ext_resource type="Texture2D" uid="uid://dsskav11affhx" path="res://addons/mobile/icons/help_bar_bottom_wide.svg" id="4_7deiu"]
+[ext_resource type="Texture2D" uid="uid://b5iayvbyigpmy" path="res://addons/mobile/icons/help_bar_top_wide.svg" id="5_ej7xq"]
 [ext_resource type="PackedScene" uid="uid://f4tiqnp8tflm" path="res://addons/mobile/signals_manager/signals_manager.tscn" id="6_cusqd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rk4ae"]
