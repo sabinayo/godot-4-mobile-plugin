@@ -227,16 +227,16 @@ metadata/help_bar_overrides = {
 "requester": "../ButtonBottomRight"
 }]]
 [connection signal="gui_input" from="LineEdit" to="mobile_plugin_signals_manager" method="_on_help_bar_gui_input" binds= [{
-"mobile_help_bar_anchor": 3,
+"mobile_help_bar_anchor": null,
 "mobile_help_bar_enabled": true,
-"mobile_help_bar_keyboard": 0,
-"mobile_help_bar_tip": "This is a test !",
+"mobile_help_bar_keyboard": null,
+"mobile_help_bar_tip": null,
 "requester": "../LineEdit"
 }]]
 [connection signal="gui_input" from="SpinBox" to="mobile_plugin_signals_manager" method="_on_help_bar_gui_input" binds= [{
-"mobile_help_bar_anchor": 0,
+"mobile_help_bar_anchor": null,
 "mobile_help_bar_enabled": true,
-"mobile_help_bar_keyboard": 5,
-"mobile_help_bar_tip": "Rate the plugin:",
+"mobile_help_bar_keyboard": null,
+"mobile_help_bar_tip": null,
 "requester": "../SpinBox"
 }]]

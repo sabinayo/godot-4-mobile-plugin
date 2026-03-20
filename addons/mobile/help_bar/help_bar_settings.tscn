@@ -38,20 +38,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "On"
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="AvailableSettings" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/tooltip_on_mobile = false
+metadata/signals_manager_path = "../mobile_plugin_signals_manager"
 
-[node name="HBox" type="HBoxContainer" parent="VBox"]
+[node name="HBox" type="HBoxContainer" parent="AvailableSettings"]
 layout_mode = 2
 tooltip_text = "Property: tip
 
 A text to provide information about what the user should write."
 metadata/tooltip_on_mobile = false
 
-[node name="title" type="Label" parent="VBox/HBox"]
+[node name="title" type="Label" parent="AvailableSettings/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -60,7 +62,7 @@ vertical_alignment = 1
 clip_text = true
 metadata/tooltip_on_mobile = false
 
-[node name="tip" type="LineEdit" parent="VBox/HBox"]
+[node name="tip" type="LineEdit" parent="AvailableSettings/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/text_ease_label = ""
@@ -74,7 +76,7 @@ metadata/mobile_help_bar_keyboard = 0
 metadata/mobile_help_bar_enabled = false
 metadata/mobile_help_bar_tip = ""
 
-[node name="HBox2" type="HBoxContainer" parent="VBox"]
+[node name="HBox2" type="HBoxContainer" parent="AvailableSettings"]
 layout_mode = 2
 tooltip_text = "Property: keyboard_type
 
@@ -88,7 +90,7 @@ tooltip_text = "Property: keyboard_type
 ● KEYBOARD_TYPE_URL: Virtual keyboard with additional keys to assist with typing URLs."
 metadata/tooltip_on_mobile = false
 
-[node name="title" type="Label" parent="VBox/HBox2"]
+[node name="title" type="Label" parent="AvailableSettings/HBox2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -96,14 +98,13 @@ text = "Keyboard type"
 vertical_alignment = 1
 clip_text = true
 
-[node name="keyboard" type="OptionButton" parent="VBox/HBox2"]
+[node name="keyboard" type="OptionButton" parent="AvailableSettings/HBox2"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
-item_count = 8
 selected = 0
+item_count = 8
 popup/item_0/text = "Default"
-popup/item_0/id = 0
 popup/item_1/text = "Multiline"
 popup/item_1/id = 1
 popup/item_2/text = "Number"
@@ -119,14 +120,14 @@ popup/item_6/id = 6
 popup/item_7/text = "URL"
 popup/item_7/id = 7
 
-[node name="HBox3" type="HBoxContainer" parent="VBox"]
+[node name="HBox3" type="HBoxContainer" parent="AvailableSettings"]
 layout_mode = 2
 tooltip_text = "property: anchor
 
 Position of the help bar based on the space left after the virtual keyboard is visible."
 metadata/tooltip_on_mobile = false
 
-[node name="title" type="Label" parent="VBox/HBox3"]
+[node name="title" type="Label" parent="AvailableSettings/HBox3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -134,15 +135,14 @@ text = "anchor"
 vertical_alignment = 1
 clip_text = true
 
-[node name="anchor" type="OptionButton" parent="VBox/HBox3"]
+[node name="anchor" type="OptionButton" parent="AvailableSettings/HBox3"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
-item_count = 4
 selected = 0
+item_count = 4
 popup/item_0/text = "Full rect"
 popup/item_0/icon = ExtResource("2_82jyy")
-popup/item_0/id = 0
 popup/item_1/text = "Center wide"
 popup/item_1/icon = ExtResource("3_cm0vq")
 popup/item_1/id = 1
@@ -155,17 +155,19 @@ popup/item_3/id = 3
 metadata/signals_manager_path = "../../../mobile_plugin_signals_manager"
 metadata/tooltip_on_mobile = false
 
-[node name="HBox5" type="HBoxContainer" parent="VBox"]
+[node name="FastSettingsContainer" type="HBoxContainer" parent="AvailableSettings"]
+unique_name_in_owner = true
 layout_mode = 2
 metadata/tooltip_on_mobile = false
+metadata/signals_manager_path = "../../mobile_plugin_signals_manager"
 
-[node name="custom_settings_editor_enabler" type="CheckBox" parent="VBox/HBox5"]
+[node name="custom_settings_editor_enabler" type="CheckBox" parent="AvailableSettings/FastSettingsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rk4ae")
 theme_override_styles/focus = SubResource("StyleBoxFlat_rk4ae")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rk4ae")
 disabled = true
 action_mode = 0
 text = "Overrides"
@@ -175,7 +177,7 @@ metadata/signals_manager_path = "../../../mobile_plugin_signals_manager"
 [node name="mobile_plugin_signals_manager" parent="." instance=ExtResource("6_cusqd")]
 
 [connection signal="toggled" from="HBox/enable" to="." method="_on_enable_toggled"]
-[connection signal="text_changed" from="VBox/HBox/tip" to="." method="_on_tip_text_changed"]
-[connection signal="item_selected" from="VBox/HBox2/keyboard" to="." method="_on_keyboard_type_selected"]
-[connection signal="item_selected" from="VBox/HBox3/anchor" to="." method="_on_size_selected"]
-[connection signal="pressed" from="VBox/HBox5/custom_settings_editor_enabler" to="." method="_on_custom_settings_editor_enabler_pressed"]
+[connection signal="text_changed" from="AvailableSettings/HBox/tip" to="." method="_on_tip_text_changed"]
+[connection signal="item_selected" from="AvailableSettings/HBox2/keyboard" to="." method="_on_keyboard_type_selected"]
+[connection signal="item_selected" from="AvailableSettings/HBox3/anchor" to="." method="_on_size_selected"]
+[connection signal="pressed" from="AvailableSettings/FastSettingsContainer/custom_settings_editor_enabler" to="." method="_on_custom_settings_editor_enabler_pressed"]
